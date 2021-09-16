@@ -1,12 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
+import Users from './Users';
+
 
 function App() {
-  return (
-    <div className="App">
-      <div cl></div>
-    </div>
-  );
+  return <Users/>
 }
-
 export default App;
