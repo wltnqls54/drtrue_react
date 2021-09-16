@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-//import { Search } from './restapi';
 
 function Users() {
   const [users, setUsers] = useState(null);
@@ -20,10 +19,7 @@ function Users() {
             Authorization: "KakaoAK facbb84a986a578369c2938173b5a8ae" // 공통으로 요청 할 헤더
           }
         });
-        const response = params => {
-          return Kakao.get();
-        };
-        //const response = await Search();
+        const response = await Kakao.get();
         setUsers(response.data);
         } catch (e) {
         setError(e);
@@ -41,13 +37,14 @@ function Users() {
     return (
         <>
         <ul>
-            {users.map(users => (
+            {users.key.map(users => (
                 <li key={users.errorType}>
-                    {users.errorType} - {users.message}
+                    {users.errorType} {users.name}
                 </li>
             ))}
         </ul>
         <button onClick={fetchUsers}>api 불러오기</button>
+        <h3>Test</h3>
         </>
   )
   
