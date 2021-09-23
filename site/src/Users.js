@@ -20,7 +20,7 @@ function Users() {
           }
         });
         const response = await Kakao.get();
-        setUsers(response.data);
+        setUsers({items: response.data});
         } catch (e) {
         setError(e);
       }
@@ -33,14 +33,16 @@ function Users() {
     if (loading) return <div>로딩중..</div>;
     if (error) return <div>에러가 발생했습니다</div>;
     if (!users) return null;
-  
+
     return (
         <>
         <ul>
-            {users.key.map(users => (
-                <li key={users.errorType}>
-                    {users.errorType} {users.name}
-                </li>
+            {users.map((users, item) => (
+                <item
+                  key={users.errorType}
+                  name={users.name}
+                />
+                //object는 map()가지고있지 않음
             ))}
         </ul>
         <button onClick={fetchUsers}>api 불러오기</button>
