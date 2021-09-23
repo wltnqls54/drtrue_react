@@ -1,8 +1,8 @@
 import './App.css';
-import Users from './Users';
+import ErrorMsg from './ErrorMsg';
 
 
 function App() {
-  return <Users/>
+  return <ErrorMsg/>;
 }
 export default App;

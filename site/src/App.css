@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.tablestyle td{
+  font-size: 500px;
+  background-color: aquamarine;
+}
