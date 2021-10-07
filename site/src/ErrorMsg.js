@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import './App.css';
+import Table from './Table';
 
 function ErrorMsg() {
   const [loading, setLoading] = useState(false);
@@ -29,22 +31,7 @@ function ErrorMsg() {
     if (loading) return <div>로딩중..</div>;
 
     return (
-      <table className={StyleSheet.tablestyle}>
-        <tbody>
-          {result.map((document, index) => (
-            <tr key={index}>
-              <td>{document.collection}</td>
-              <td>{document.datetime}</td>
-              <td>{document.display_sitename}</td>
-              <td>{document.doc_url}</td>
-              <td>{document.height}</td>
-              <td>{document.image_url}</td>
-              <td>{document.thumbnail_url}</td>
-              <td>{document.width}</td>
-            </tr>
-        ))}
-        </tbody>
-      </table>
+      <Table table_data={document} table_result={result}/>
   )
   
 }
