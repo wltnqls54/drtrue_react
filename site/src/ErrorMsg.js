@@ -2,10 +2,13 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
 import Table from './Table';
+import Pagination from './Pagination';
 
 function ErrorMsg() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
 
   const fetchMsgs = async () => {
     try {
@@ -30,9 +33,20 @@ function ErrorMsg() {
     }, []);
     if (loading) return <div>로딩중..</div>;
 
+    // Get current posts
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = result.slice(indexOfFirstPost, indexOfLastPost);
+
+    // Change page
+    const paginate = pageNumber => setCurrentPage(pageNumber);
+
     return (
-      <Table table_data={document} table_result={result}/>
-  )
+      <>
+      <Table table_data={currentPosts}/>
+      <Pagination postsPerPage={postsPerPage} totalPosts={result.length} paginate={paginate}/>
+      </>
+  ) 
   
 }
 export default ErrorMsg;

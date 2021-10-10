@@ -1,9 +1,11 @@
 import React from "react";
 import './App.css'
 
-function Table({ table_data, table_result }) {
+function Table({ table_data }) {
+
     return (
-        <table class="restapi-table">
+        <>
+        <table className="restapi-table">
             <thead>
                 <tr>
                     <th>collection</th>
@@ -17,20 +19,23 @@ function Table({ table_data, table_result }) {
                 </tr>
             </thead>
             <tbody>
-                {table_result.map((table_data, index) => (
+                {table_data.map((document, index) => (
                     <tr key={index}>
-                        <td>{table_data.collection}</td>
-                        <td>{table_data.datetime}</td>
-                        <td>{table_data.display_sitename}</td>
-                        <td>{table_data.doc_url}</td>
-                        <td>{table_data.height}</td>
-                        <td>{table_data.image_url}</td>
-                        <td>{table_data.thumbnail_url}</td>
-                        <td>{table_data.width}</td>
+                        <td>{document.collection}</td>
+                        <td>{document.datetime}</td>
+                        <td>{document.display_sitename}</td>
+                        <td>{document.doc_url}</td>
+                        <td>{document.height}</td>
+                        <td>{document.image_url}</td>
+                        <td>{document.thumbnail_url}</td>
+                        <td>{document.width}</td>
                     </tr>
                 ))}
             </tbody>
         </table>
+       
+        
+        </>
     );
 }
 
