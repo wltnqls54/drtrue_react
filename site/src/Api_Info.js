@@ -4,7 +4,7 @@ import './App.css';
 import Table from './Table';
 import Pagination from './Pagination';
 
-function ErrorMsg() {
+function Api_Info() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -49,4 +49,4 @@ function ErrorMsg() {
   ) 
   
 }
-export default ErrorMsg;
+export default Api_Info;
