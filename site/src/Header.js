@@ -14,8 +14,8 @@ const Header = ({ location }) => {
   };
   return (
     <ul>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <li>헤더1</li>
+      <Link to="/" >
+        <h2>Dr.true react</h2>
       </Link>
       {user ? (
         <nav>

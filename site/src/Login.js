@@ -32,7 +32,7 @@ const Login = () => {
     
     return (
         <div className="container">
-          <h3>Login해보자</h3>
+          <h3>Login</h3>
           <form>
             <div className="container-input">
               <div className="inputitem">

@@ -157,9 +157,9 @@ const SignUp = ({ history }) => {
             )}
           </div>
         </div>
-        <btn type="submit" value="가입" onClick={onSignUp}></btn>
+        <button type="submit" onClick={onSignUp}>가입</button>
         <link to="/"/>
-          <btn type="submit" value="로그인"></btn>
+          <button type="submit">로그인</button>
       
       </div>
     );
