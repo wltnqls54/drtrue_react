@@ -20,7 +20,10 @@ const Login = () => {
         alert("모든 값을 정확하게 입력해주세요");
         return;
       }
-  
+      if(!userList) {
+        alert("회원가입을 해주세요")
+        return;
+      }
       dispatch({
         type: "LOGIN",
         userId: id,
@@ -67,6 +70,7 @@ const Login = () => {
           <Link to="/signup">
             <button type="submit" value="회원가입">회원가입</button>
           </Link>
+          <p>{userList.userId}</p>
         </div>
       );
 }

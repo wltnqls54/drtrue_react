@@ -21,12 +21,14 @@ const Header = ({ location }) => {
         <nav>
           <li>{user.userId}님</li>
           <li>
-            <Link to="/mypage">
-              <input type="submit" value="마이 페이지" />
+            <Link to="/page">
+              <input type="submit" value="api 페이지" />
             </Link>
           </li>
           <li>
-            <input type="submit" value="로그아웃" onClick={onLogOut} />
+            <Link to="/">
+              <input type="submit" value="로그아웃" onClick={onLogOut} />
+            </Link>
           </li>
         </nav>
       ) : location.pathname === "/signup" ? (

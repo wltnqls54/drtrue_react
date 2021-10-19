@@ -17,17 +17,20 @@ function App() {
       <BrowserRouter>
         <Header />
         {user ? (
+          //회원일 경우
           <Switch>
-           <Route exact path="/" component={Home}/>
-            <Route path="/mypage" component={Api_Info}/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/page" component={Api_Info}/>
             <Route path="/404" component={NotFound}/>
             <Redirect from="*" to="/404" />
           </Switch>
         ) : (
+          //비회원일 경우
           <Switch>
             <Route exact path="/" component={Login}/>
             <Route path="/signup" component={SignUp}/>
             <Route path="/404" component={NotFound}/>
+            <Route path="/page" component={Api_Info}/>
             <Redirect from="*" to="/404" />
           </Switch>
         )}
