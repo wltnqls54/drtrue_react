@@ -160,7 +160,6 @@ const SignUp = ({ history }) => {
         <button type="submit" onClick={onSignUp}>가입</button>
         <link to="/"/>
           <button type="submit">로그인</button>
-      
       </div>
     );
   };

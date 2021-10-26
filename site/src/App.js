@@ -7,13 +7,11 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import Home from './Home';
 import NotFound from './NotFound';
 import SignUp from './SignUp';
-import { UserProvider } from './UserContext';
 
 function App() {
   const {user} = useUserState();
 
   return (
-    <UserProvider>
       <BrowserRouter>
         <Header />
         {user ? (
@@ -35,8 +33,6 @@ function App() {
           </Switch>
         )}
       </BrowserRouter>
-    </UserProvider>
-    
   );
 }
 export default App;

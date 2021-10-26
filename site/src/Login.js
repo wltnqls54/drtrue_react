@@ -21,14 +21,15 @@ const Login = () => {
         return;
       }
       if(!userList) {
-        alert("회원가입을 해주세요")
+        alert(dispatch.user)
         return;
       }
+
       dispatch({
         type: "LOGIN",
         userId: id,
       });
-
+    
       alert("로그인");
       onReset();
     };
@@ -70,9 +71,8 @@ const Login = () => {
           <Link to="/signup">
             <button type="submit" value="회원가입">회원가입</button>
           </Link>
-          <p>{userList.userId}</p>
         </div>
-      );
+    );
 }
 
 export default Login;
