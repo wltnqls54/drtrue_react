@@ -1,6 +1,42 @@
 import React, {useState, useCallback, useEffect} from "react";
 import { useUserDispatch } from "./UserContext";
 import useInput from "./useInput";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const Container = styled.div`
+  padding: 0px 50px 5px 50px;
+`;
+
+const Title = styled.h2`
+  color: #4d2600;
+`;
+
+const Input = styled.input`
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+  margin: 0 0 8px;
+  padding: 5px 39px 5px 11px;
+  border: solid 1px #dadada;
+  background: #fff;
+  box-sizing: border-box;
+`;
+
+const Submitbtn = styled.button`
+  font-size: 15px;
+  font-weight: 800;
+  display: block;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-color: #fcf5e9;
+  color: #4d2600;
+`;
+
 
 const SignUp = ({ history }) => {
     const [id, onChangeId, setId] = useInput("");
@@ -116,12 +152,12 @@ const SignUp = ({ history }) => {
     };
   
     return (
-      <div className="container">
-        <h3>회원가입</h3>
+      <Container>
+        <Title>회원가입</Title>
         <div className="container-input">
           <div className="inputitem">
-            <h3 className="input-title">아이디</h3>
-            <input
+
+            <Input
               type="text"
               placeholder="아이디를 입력하세요"
               value={id}
@@ -131,8 +167,8 @@ const SignUp = ({ history }) => {
             {idError ? <errormessage>{idError}</errormessage> : ""}
           </div>
           <div className="inputitem">
-            <h3 className="input-title">비밀번호</h3>
-            <input
+           
+            <Input
               type="password"
               placeholder="비밀번호를 입력하세요"
               value={pwd}
@@ -142,8 +178,8 @@ const SignUp = ({ history }) => {
             {pwdError ? <errormessage>{pwdError}</errormessage> : ""}
           </div>
           <div className="inputtiem">
-            <h3 className="input-title">비밀번호 확인</h3>
-            <input
+           
+            <Input
               type="password"
               placeholder="비밀번호 확인을 입력하세요"
               value={confirmPwd}
@@ -157,10 +193,8 @@ const SignUp = ({ history }) => {
             )}
           </div>
         </div>
-        <button type="submit" onClick={onSignUp}>가입</button>
-        <link to="/"/>
-          <button type="submit">로그인</button>
-      </div>
+        <Submitbtn type="submit" onClick={onSignUp}>가입</Submitbtn>
+      </Container>
     );
   };
   

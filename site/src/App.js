@@ -28,7 +28,6 @@ function App() {
             <Route exact path="/" component={Login}/>
             <Route path="/signup" component={SignUp}/>
             <Route path="/404" component={NotFound}/>
-            <Route path="/page" component={Api_Info}/>
             <Redirect from="*" to="/404" />
           </Switch>
         )}
