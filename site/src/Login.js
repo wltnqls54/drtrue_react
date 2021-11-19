@@ -54,8 +54,19 @@ const Login = () => {
         alert("모든 값을 정확하게 입력해주세요");
         return;
       }
-      if(!userList) {
-        alert(dispatch.user)
+
+      var usernumber = 0;
+      for(var i=0; i<userList.length; i++) {
+        if(userList[i].id == id)
+          usernumber = i;
+      }
+
+      if (usernumber == 0) {
+        alert("회원가입을 해주세요");
+        return;
+      }
+      if (userList[usernumber].pwd != pwd) {
+        alert("비밀번호가 다릅니다");
         return;
       }
 
@@ -66,6 +77,8 @@ const Login = () => {
     
       alert("로그인");
       onReset();
+
+      console.log(userList);
     };
     
     return (

@@ -1,5 +1,5 @@
 import React, {useState, useCallback, useEffect} from "react";
-import { useUserDispatch } from "./UserContext";
+import { useUserDispatch, useUserState } from "./UserContext";
 import useInput from "./useInput";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -47,6 +47,9 @@ const SignUp = ({ history }) => {
       pwdError: "",
       confirmPwdError: "",
     });
+
+    const {userList} = useUserState();
+
     const { idError, pwdError, confirmPwdError } = errorMessage;
     const dispatch = useUserDispatch();
 
@@ -147,6 +150,7 @@ const SignUp = ({ history }) => {
       });
   
       alert("회원 가입 완료");
+      console.log(userList);
       history.push("/");
       onReset();
     };
