@@ -55,13 +55,13 @@ const Login = () => {
         return;
       }
 
-      var usernumber = 0;
+      var usernumber = -1;
       for(var i=0; i<userList.length; i++) {
         if(userList[i].id == id)
           usernumber = i;
       }
 
-      if (usernumber == 0) {
+      if (usernumber == -1) {
         alert("회원가입을 해주세요");
         return;
       }
